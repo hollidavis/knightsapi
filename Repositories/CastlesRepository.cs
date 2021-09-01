@@ -31,7 +31,7 @@ namespace knightsapi.Repositories
             (@Name);
             SELECT LAST_INSERT_ID();";
             newCastle.Id = _db.ExecuteScalar<int>(sql, newCastle);
-            return this.Get(newCastle.Id);
+            return Get(newCastle.Id);
         }
 
         internal Castle Update(Castle updatedCastle){
@@ -42,6 +42,11 @@ namespace knightsapi.Repositories
             WHERE id = @Id;";
             _db.Execute(sql, updatedCastle);
             return updatedCastle;
+        }
+
+        internal void Delete(int id){
+            string sql = "DELETE FROM castles WHERE id = @Id LIMIT 1";
+            _db.Execute(sql, new { id });
         }
     }
 }
