@@ -42,7 +42,6 @@ namespace knightsapi.Services
     internal Knight Edit(Knight updatedKnight)
     {
       Knight original = Get(updatedKnight.Id);
-      // check each value on the incoming object, if it exits then allow it to continue, if it does not set it to the original value
       updatedKnight.Name = updatedKnight.Name != null ? updatedKnight.Name : original.Name;
       return _repo.Update(updatedKnight);
     }

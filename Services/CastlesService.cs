@@ -42,7 +42,6 @@ namespace knightsapi.Services
     internal Castle Edit(Castle updatedCastle)
     {
       Castle original = Get(updatedCastle.Id);
-      // check each value on the incoming object, if it exits then allow it to continue, if it does not set it to the original value
       updatedCastle.Name = updatedCastle.Name != null ? updatedCastle.Name : original.Name;
       return _repo.Update(updatedCastle);
     }

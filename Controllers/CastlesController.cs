@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using castlesapi.Models;
-using castlesapi.Services;
+using knightsapi.Models;
+using knightsapi.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace castlesapi.Controllers
+namespace knightsapi.Controllers
 {
   [ApiController]
   [Route("/api/[controller]")]
@@ -87,6 +87,5 @@ namespace castlesapi.Controllers
         return BadRequest(err.Message);
       }
     }
-
   }
 }
