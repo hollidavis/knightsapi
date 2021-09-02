@@ -26,9 +26,9 @@ namespace knightsapi.Repositories
         internal Knight Create(Knight newKnight){
             string sql = @"
             INSERT INTO knights
-            (name)
+            (name, castleId)
             VALUES
-            (@Name);
+            (@Name, @CastleId);
             SELECT LAST_INSERT_ID();";
             newKnight.Id = _db.ExecuteScalar<int>(sql, newKnight);
             return Get(newKnight.Id);
